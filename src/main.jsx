@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Landing from "./pages/Landing.jsx";
 import Mortgage from "./pages/Mortgage.jsx";
 import Fire from "./pages/Fire.jsx";
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/trade" element={<Trade />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   </React.StrictMode>
 );
