@@ -157,6 +157,11 @@ function Row({ label, val, color, note, bold }) {
 
 // ── main ──────────────────────────────────────────────────────────────────────
 export default function MortgageCalc() {
+  // Set the browser tab title for this route
+  useEffect(() => {
+    document.title = "UK Mortgage Calculator | WealthFM";
+  }, []);
+
   const [mode, setMode] = useState("residential");
   const [purpose, setPurpose] = useState("purchase");
   const [repaymentType, setRepaymentType] = useState("repayment");
@@ -353,8 +358,13 @@ export default function MortgageCalc() {
       {/* ── HEADER ── */}
       <div style={{ background: "linear-gradient(135deg,#0d1a2b 0%,#071422 100%)", borderBottom: "1px solid #1e3048", padding: isMobile ? "16px 18px" : "18px 28px", display: "flex", alignItems: isMobile ? "flex-start" : "center", justifyContent: "space-between", gap: 18, flexWrap: "wrap" }}>
         <div>
-          <div style={{ fontSize: 10, letterSpacing: "0.2em", color: "#1a8853", textTransform: "uppercase", fontWeight: 700, marginBottom: 3 }}>UK Mortgage Calculator</div>
-          <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "Georgia,serif", letterSpacing: "-0.02em" }}>MortgageDESK</div>
+          <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: 7, textDecoration: "none", fontSize: 11, color: "#5a7a9a", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 6 }}>
+            <span style={{ display: "inline-block", width: 6, height: 6, background: "#1a8853", borderRadius: "50%" }} />
+            <span style={{ color: "#8a9bb0" }}>WealthFM</span>
+            <span style={{ color: "#3a5570", margin: "0 4px" }}>/</span>
+            <span style={{ color: "#1a8853" }}>UK Mortgage</span>
+          </a>
+          <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "Georgia,serif", letterSpacing: "-0.02em" }}>Mortgage Calculator</div>
         </div>
         <div style={{ display: "flex", gap: 16, alignItems: "flex-end", flexWrap: "wrap" }}>
           <div>
@@ -1075,9 +1085,9 @@ export default function MortgageCalc() {
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "#5a7a9a", fontWeight: 700, marginBottom: 8 }}>Important — Please Read</div>
           <p style={{ fontSize: 11, color: "#5a7a9a", lineHeight: 1.7, margin: 0 }}>
-            MortgageDESK is an information and calculation tool only. It does not provide financial, mortgage, tax or legal advice, and nothing it produces is a recommendation to take out, switch, or vary any mortgage or financial product. All figures are estimates based on the information you enter and standard assumptions; they are not quotes or offers, and actual lender criteria, rates, fees and tax treatment will differ. Stamp Duty, tax rules and lender stress tests change over time and vary by individual circumstances and UK nation. Before making any decision you should speak to an FCA-authorised mortgage adviser and, where relevant, a qualified tax professional. Your home may be repossessed if you do not keep up repayments on your mortgage.
+            This calculator is an information and calculation tool only. It does not provide financial, mortgage, tax or legal advice, and nothing it produces is a recommendation to take out, switch, or vary any mortgage or financial product. All figures are estimates based on the information you enter and standard assumptions; they are not quotes or offers, and actual lender criteria, rates, fees and tax treatment will differ. Stamp Duty, tax rules and lender stress tests change over time and vary by individual circumstances and UK nation. Before making any decision you should speak to an FCA-authorised mortgage adviser and, where relevant, a qualified tax professional. Your home may be repossessed if you do not keep up repayments on your mortgage.
           </p>
-          <div style={{ fontSize: 10, color: "#3a5570", marginTop: 12 }}>© {new Date().getFullYear()} MortgageDESK · For informational use only · Not regulated financial advice</div>
+          <div style={{ fontSize: 10, color: "#3a5570", marginTop: 12 }}>© {new Date().getFullYear()} WealthFM · For informational use only · Not regulated financial advice</div>
         </div>
       </div>
     </div>

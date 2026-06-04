@@ -102,9 +102,9 @@ export default function Footer() {
         <div style={styles.cols}>
           <div>
             <div style={styles.colTitle}>Tools</div>
-            <Link to="/mortgage" style={styles.colLink}>Mortgage Desk</Link>
-            <Link to="/fire" style={styles.colLink}>FIRE Desk</Link>
-            <Link to="/trade" style={styles.colLink}>Trade Desk</Link>
+            <Link to="/mortgage" style={styles.colLink}>Mortgage Calculator</Link>
+            <Link to="/fire" style={styles.colLink}>FIRE Planner</Link>
+            <Link to="/trade" style={styles.colLink}>Trade Workbench</Link>
           </div>
           {YT_URL && (
             <div>

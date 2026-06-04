@@ -8,7 +8,7 @@ import Footer from "../shared/Footer.jsx";
 const TOOLS = [
   {
     id: "mortgage",
-    name: "Mortgage Desk",
+    name: "Mortgage Calculator",
     region: "UK",
     flag: "🇬🇧",
     iconAccent: "accent",
@@ -18,7 +18,7 @@ const TOOLS = [
   },
   {
     id: "fire",
-    name: "FIRE Desk",
+    name: "FIRE Planner",
     region: "UK",
     flag: "🇬🇧",
     iconAccent: null,
@@ -28,7 +28,7 @@ const TOOLS = [
   },
   {
     id: "trade",
-    name: "Trade Desk",
+    name: "Trade Workbench",
     region: "Global",
     flag: "🌐",
     iconAccent: "warm",
@@ -40,6 +40,11 @@ const TOOLS = [
 
 export default function Landing() {
   const loc = useLocation();
+
+  // Set the browser tab title for this route
+  useEffect(() => {
+    document.title = "WealthFM — Precise tools for personal finance";
+  }, []);
 
   // Handle hash anchors (e.g. /#tools) so links from other pages scroll correctly
   useEffect(() => {
@@ -97,9 +102,9 @@ export default function Landing() {
           <div className="dash-content">
             <div className="dash-side">
               <div className="dash-side-title">Tools</div>
-              <div className="dash-side-item active"><span className="ico" />Mortgage Desk</div>
-              <div className="dash-side-item"><span className="ico" />FIRE Desk</div>
-              <div className="dash-side-item"><span className="ico" />Trade Desk</div>
+              <div className="dash-side-item active"><span className="ico" />Mortgage Calculator</div>
+              <div className="dash-side-item"><span className="ico" />FIRE Planner</div>
+              <div className="dash-side-item"><span className="ico" />Trade Workbench</div>
               <div className="dash-side-title" style={{ marginTop: 24 }}>Sections</div>
               <div className="dash-side-item"><span className="ico" />Affordability</div>
               <div className="dash-side-item"><span className="ico" />Costs &amp; SDLT</div>
@@ -107,7 +112,7 @@ export default function Landing() {
             </div>
             <div className="dash-main">
               <div className="dash-h">
-                <div className="dash-h-title">Mortgage Desk</div>
+                <div className="dash-h-title">Mortgage Calculator</div>
                 <div className="dash-h-meta">UK · 5-YR FIX</div>
               </div>
               <div className="dash-stats">
@@ -181,7 +186,7 @@ export default function Landing() {
           <span>The tools</span>
         </div>
         <div className="section-h">
-          Three desks. Each a <em>different</em> decision.
+          Three tools. Each a <em>different</em> decision.
         </div>
         <div className="tools-grid">
           {TOOLS.map((t) => (

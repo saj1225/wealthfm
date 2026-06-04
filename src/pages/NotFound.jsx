@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../shared/Header.jsx";
 import Footer from "../shared/Footer.jsx";
@@ -49,6 +50,10 @@ const styles = {
 };
 
 export default function NotFound() {
+  useEffect(() => {
+    document.title = "Not Found | WealthFM";
+  }, []);
+
   return (
     <div style={{ background: "#fafaf9", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       <Header />
