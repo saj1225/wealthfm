@@ -64,11 +64,6 @@ export default function Landing() {
 
       {/* ── HERO ── */}
       <header className="hero">
-        <div className="hero-badge">
-          <span className="dot" />
-          Now in build
-          <span className="tag">v1.0</span>
-        </div>
         <h1 className="hero-title">
           Precise tools for <em>personal finance.</em>
         </h1>
