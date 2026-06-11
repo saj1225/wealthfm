@@ -74,7 +74,7 @@ const styles = {
 // Until you set your real channel URL, the YouTube button stays disabled-looking
 // rather than linking to a placeholder. Replace YT_URL with your channel URL
 // when ready and the buttons across the site will all light up.
-export const YT_URL = ""; // e.g. "https://youtube.com/@wealthfm"
+export const YT_URL = "https://youtube.com/@wealthfm?si=vYFOQ1fWS3lI1o69";
 
 export default function Header() {
   const loc = useLocation();
