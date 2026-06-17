@@ -109,8 +109,8 @@ function project(inp) {
       etf:          Math.round(etf),
       netWorth:     Math.round(nw),
       fireTarget:   Math.round(fireTarget),
-      fireProgress: Math.round(Math.min(nw / fireTarget * 100, 100) * 10) / 10,
-      passiveIncome:Math.round(nw * .04),
+      fireProgress: Math.round(Math.min((pen + isa + etf) / fireTarget * 100, 100) * 10) / 10,
+      passiveIncome:Math.round((pen + isa + etf) * .04),
       phase:        working ? "ACCUMULATION" : "COASTING",
       annualContrib: working ? (annPen + annISA + (y > 0 ? occasionalContrib : 0)) : 0,
     });
