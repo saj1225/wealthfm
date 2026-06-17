@@ -14,7 +14,7 @@ const TOOLS = [
     iconAccent: "accent",
     desc: "Residential and buy-to-let calculator. Affordability, stamp duty, ICR stress tests, remortgage break-even.",
     features: ["Purchase & remortgage", "BTL with Section 24", "SDLT band breakdown"],
-    status: "soon", // "soon" | "build" | "live"
+    status: "live", // "soon" | "build" | "live"
   },
   {
     id: "fire",

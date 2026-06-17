@@ -403,7 +403,7 @@ const PhaseLegend = ({ workingYears }) => (
 
 /* ─── Main component ──────────────────────────────────────────────────── */
 export default function Fire() {
-  useEffect(() => { document.title = "FIRE Planner | WealthFM"; }, []);
+  useEffect(() => { document.title = "FIRE Planner | WealthFM"; window.scrollTo(0, 0); }, []);
 
   const [inp, setInp] = useState({
     lumpSum: 0, monthlyPension: 0, occasionalContrib: 0,
