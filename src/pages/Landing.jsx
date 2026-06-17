@@ -24,7 +24,7 @@ const TOOLS = [
     iconAccent: null,
     desc: "A financial-independence planner with ISA & SIPP modelling, coasting phase, and Coast FIRE mechanics.",
     features: ["ISA & SIPP modelling", "Coast / Lean / Fat FIRE", "Property & mortgage"],
-    status: "build",
+    status: "live",
   },
   {
     id: "trade",
