@@ -200,11 +200,11 @@ function Field({ label, value, onChange, pre = "£", suf, hint, decimals = 0, hi
     }}>
       <label style={{ display: "block", fontFamily: "'Geist', sans-serif", fontSize: 9.5, color: highlight || C.mut, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 4 }}>{label}</label>
       <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-        {pre && <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 12, color: focused ? C.gold : highlight || C.mut, flexShrink: 0 }}>{pre}</span>}
+        {pre && <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 12, color: focused ? C.gold : highlight || C.mut, flexShrink: 0 }}>{pre}</span>}
         <input ref={ref} type="text" inputMode="decimal" value={raw} placeholder="0"
           onChange={onCh} onFocus={onFoc} onBlur={onBlur}
           style={{ flex: 1, background: "transparent", border: "none", outline: "none", fontFamily: "'Geist Mono', monospace", fontSize: 13, color: focused ? C.wht : C.txt, padding: 0 }} />
-        {suf && <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 11, color: highlight || C.mut, flexShrink: 0 }}>{suf}</span>}
+        {suf && <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 11, color: highlight || C.mut, flexShrink: 0 }}>{suf}</span>}
       </div>
       {hint && <p style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.dim, marginTop: 3 }}>{hint}</p>}
     </div>
@@ -235,13 +235,13 @@ function YearStepper({ label, value, onChange, color, hint, min = 1, max = 99 })
         {hint && <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.dim }}>{hint}</span>}
       </div>
       <div style={{ display: "flex", alignItems: "stretch", gap: 8 }}>
-        <button onClick={() => step(-1)} style={{ width: 36, flexShrink: 0, border: `1px solid ${color}44`, background: `${color}14`, color, borderRadius: 6, fontSize: 18, fontFamily: "'Geist Mono', monospace", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", lineHeight: 1, userSelect: "none" }}>−</button>
+        <button onClick={() => step(-1)} style={{ width: 36, flexShrink: 0, border: `1px solid ${color}44`, background: `${color}14`, color, borderRadius: 6, fontSize: 18, fontFamily: "'Geist', sans-serif", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", lineHeight: 1, userSelect: "none" }}>−</button>
         <div onClick={() => ref.current?.focus()} style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 6, background: focused ? "#0d1f35" : "transparent", border: `1px solid ${focused ? color + "88" : "transparent"}`, borderRadius: 6, cursor: "text", minWidth: 0 }}>
           <input ref={ref} type="text" inputMode="numeric" value={raw} onFocus={() => setFocused(true)} onChange={onCh} onBlur={onBlur}
-            style={{ width: "100%", textAlign: "center", background: "transparent", border: "none", outline: "none", fontFamily: "'Instrument Serif', serif", fontSize: 24, fontWeight: 400, color: C.wht, padding: "4px 0" }} />
-          <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 11, color: C.sub, flexShrink: 0 }}>yrs</span>
+            style={{ width: "100%", textAlign: "center", background: "transparent", border: "none", outline: "none", fontFamily: "'Geist Mono', monospace", fontSize: 24, fontWeight: 400, color: C.wht, padding: "4px 0" }} />
+          <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 11, color: C.sub, flexShrink: 0 }}>yrs</span>
         </div>
-        <button onClick={() => step(1)} style={{ width: 36, flexShrink: 0, border: `1px solid ${color}44`, background: `${color}14`, color, borderRadius: 6, fontSize: 18, fontFamily: "'Geist Mono', monospace", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", lineHeight: 1, userSelect: "none" }}>+</button>
+        <button onClick={() => step(1)} style={{ width: 36, flexShrink: 0, border: `1px solid ${color}44`, background: `${color}14`, color, borderRadius: 6, fontSize: 18, fontFamily: "'Geist', sans-serif", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", lineHeight: 1, userSelect: "none" }}>+</button>
       </div>
     </div>
   );
@@ -292,8 +292,8 @@ function PhaseToggle({ workingYears, coastingYears, onChangeWorking, onChangeCoa
   return (
     <div style={{ background: C.surf, border: `1px solid ${C.bdr2}`, borderRadius: 6, padding: "12px 12px 14px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-        <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9, color: C.mut, textTransform: "uppercase", letterSpacing: "0.12em" }}>Timeline</span>
-        <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9.5, color: C.sub }}>
+        <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.mut, textTransform: "uppercase", letterSpacing: "0.12em" }}>Timeline</span>
+        <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9.5, color: C.sub }}>
           <span style={{ color: C.violet }}>Yr 0–{workingYears}</span>
           <span style={{ color: C.dim }}> · </span>
           <span style={{ color: C.teal }}>Yr {workingYears}–{totalYears}</span>
@@ -308,19 +308,19 @@ function PhaseToggle({ workingYears, coastingYears, onChangeWorking, onChangeCoa
           style={{ position: "absolute", top: "50%", left: `${pctA}%`, transform: "translate(-50%,-50%)", width: 18, height: 18, borderRadius: "50%", background: C.violet, border: `2px solid ${C.wht}44`, boxShadow: `0 0 10px ${C.violet}99`, cursor: "grab", zIndex: 3 }} />
         <div onMouseDown={e => { e.stopPropagation(); activeThumb.current = "B"; }} onTouchStart={e => { e.stopPropagation(); activeThumb.current = "B"; }}
           style={{ position: "absolute", top: "50%", right: 0, transform: "translate(50%,-50%)", width: 18, height: 18, borderRadius: "50%", background: C.teal, border: `2px solid ${C.wht}44`, boxShadow: `0 0 10px ${C.teal}99`, cursor: "ew-resize", zIndex: 3 }} />
-        <span style={{ position: "absolute", left: 0, top: "100%", fontFamily: "'Geist Mono', monospace", fontSize: 8, color: C.dim, marginTop: 5 }}>Yr 0</span>
-        <span style={{ position: "absolute", left: `${pctA}%`, top: "100%", transform: "translateX(-50%)", whiteSpace: "nowrap", fontFamily: "'Geist Mono', monospace", fontSize: 8, color: C.violet, marginTop: 5, pointerEvents: "none" }}>▲{workingYears}yr</span>
-        <span style={{ position: "absolute", right: 0, top: "100%", fontFamily: "'Geist Mono', monospace", fontSize: 8, color: C.teal, marginTop: 5, transform: "translateX(50%)", whiteSpace: "nowrap" }}>▲{totalYears}yr</span>
+        <span style={{ position: "absolute", left: 0, top: "100%", fontFamily: "'Geist', sans-serif", fontSize: 8, color: C.dim, marginTop: 5 }}>Yr 0</span>
+        <span style={{ position: "absolute", left: `${pctA}%`, top: "100%", transform: "translateX(-50%)", whiteSpace: "nowrap", fontFamily: "'Geist', sans-serif", fontSize: 8, color: C.violet, marginTop: 5, pointerEvents: "none" }}>▲{workingYears}yr</span>
+        <span style={{ position: "absolute", right: 0, top: "100%", fontFamily: "'Geist', sans-serif", fontSize: 8, color: C.teal, marginTop: 5, transform: "translateX(50%)", whiteSpace: "nowrap" }}>▲{totalYears}yr</span>
       </div>
       <div style={{ display: "flex", gap: 6, marginTop: 24 }}>
         <div style={{ flex: 1, background: `${C.violet}10`, border: `1px solid ${C.violet}33`, borderRadius: 4, padding: "7px 10px" }}>
-          <p style={{ fontFamily: "'Geist Mono', monospace", fontSize: 8, color: C.violet, marginBottom: 3, letterSpacing: "0.1em" }}>◆ ACCUMULATION</p>
-          <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: 17, color: C.wht }}>{workingYears} <span style={{ fontSize: 11, color: C.sub, fontFamily: "'Geist Mono', monospace" }}>yrs</span></p>
+          <p style={{ fontFamily: "'Geist', sans-serif", fontSize: 8, color: C.violet, marginBottom: 3, letterSpacing: "0.1em" }}>◆ ACCUMULATION</p>
+          <p style={{ fontFamily: "Georgia, serif", fontSize: 17, color: C.wht }}>{workingYears} <span style={{ fontSize: 11, color: C.sub, fontFamily: "'Geist', sans-serif" }}>yrs</span></p>
           <p style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.sub, marginTop: 2 }}>Yr 0 → {workingYears} · contributions on</p>
         </div>
         <div style={{ flex: 1, background: `${C.teal}0c`, border: `1px solid ${C.teal}33`, borderRadius: 4, padding: "7px 10px" }}>
-          <p style={{ fontFamily: "'Geist Mono', monospace", fontSize: 8, color: C.teal, marginBottom: 3, letterSpacing: "0.1em" }}>◆ COASTING</p>
-          <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: 17, color: C.wht }}>{coastingYears} <span style={{ fontSize: 11, color: C.sub, fontFamily: "'Geist Mono', monospace" }}>yrs</span></p>
+          <p style={{ fontFamily: "'Geist', sans-serif", fontSize: 8, color: C.teal, marginBottom: 3, letterSpacing: "0.1em" }}>◆ COASTING</p>
+          <p style={{ fontFamily: "Georgia, serif", fontSize: 17, color: C.wht }}>{coastingYears} <span style={{ fontSize: 11, color: C.sub, fontFamily: "'Geist', sans-serif" }}>yrs</span></p>
           <p style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.sub, marginTop: 2 }}>Yr {workingYears} → {totalYears} · compound only</p>
         </div>
       </div>
@@ -333,7 +333,7 @@ const Tip = ({ active, payload, label }) => {
   if (!active || !payload?.length) return null;
   const phase = payload[0]?.payload?.phase;
   return (
-    <div style={{ background: "#07111e", border: `1px solid ${C.bdr2}`, borderRadius: 4, padding: "10px 14px", fontFamily: "'Geist Mono', monospace", fontSize: 11, boxShadow: "0 8px 32px rgba(0,0,0,.7)" }}>
+    <div style={{ background: "#07111e", border: `1px solid ${C.bdr2}`, borderRadius: 4, padding: "10px 14px", fontFamily: "'Geist', sans-serif", fontSize: 11, boxShadow: "0 8px 32px rgba(0,0,0,.7)" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}>
         <span style={{ fontSize: 9.5, color: C.mut, letterSpacing: "0.1em" }}>YR {label}</span>
         {phase && <span style={{ fontSize: 8.5, color: phase === "ACCUMULATION" ? C.violet : C.teal, background: phase === "ACCUMULATION" ? `${C.violet}18` : `${C.teal}18`, padding: "1px 6px", borderRadius: 2 }}>{phase}</span>}
@@ -348,8 +348,8 @@ const Tip = ({ active, payload, label }) => {
 const KPI = ({ label, value, sub, col = C.gold, glow }) => (
   <div className="fire-kc" style={{ flex: "1 1 148px", minWidth: 138, background: `linear-gradient(150deg,${C.card} 0%,#091522 100%)`, border: `1px solid ${C.bdr2}`, borderTop: `2px solid ${col}`, borderRadius: 4, padding: "16px 18px", boxShadow: glow ? `0 0 28px ${col}1a` : "0 2px 10px rgba(0,0,0,.4)" }}>
   <p style={{ fontFamily: "'Geist', sans-serif", fontSize: 9.5, color: C.mut, textTransform: "uppercase", letterSpacing: "0.14em", marginBottom: 10 }}>{label}</p>
-  <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: 25, color: col, lineHeight: 1 }}>{value}</p>
-  {sub && <p style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9.5, color: C.sub, marginTop: 6 }}>{sub}</p>}
+  <p style={{ fontFamily: "Georgia, serif", fontSize: 25, color: col, lineHeight: 1 }}>{value}</p>
+  {sub && <p style={{ fontFamily: "'Geist', sans-serif", fontSize: 9.5, color: C.sub, marginTop: 6 }}>{sub}</p>}
 </div>
 );
 
@@ -366,15 +366,15 @@ const Meter = ({ pct }) => {
     <div style={{ background: C.card, border: `1px solid ${C.bdr}`, borderRadius: 4, padding: "15px 20px", marginBottom: 14 }}>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10 }}>
         <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9.5, color: C.mut, textTransform: "uppercase", letterSpacing: "0.14em" }}>FIRE Progress Index</span>
-        <span style={{ fontFamily: "'Instrument Serif', serif", fontSize: 22, color: col }}>{fPct(pct)}</span>
+        <span style={{ fontFamily: "Georgia, serif", fontSize: 22, color: col }}>{fPct(pct)}</span>
       </div>
       <div style={{ position: "relative", height: 2, background: C.dim, borderRadius: 2 }}>
         <div style={{ position: "absolute", left: 0, top: 0, height: "100%", width: `${Math.min(pct, 100)}%`, background: `linear-gradient(90deg,${col}88,${col})`, borderRadius: 2, transition: "width 1s cubic-bezier(.4,0,.2,1)", boxShadow: `0 0 6px ${col}66` }} />
         {[25, 50, 75].map(m => <div key={m} style={{ position: "absolute", left: `${m}%`, top: -4, width: 1, height: 10, background: C.dim }} />)}
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", marginTop: 6 }}>
-        <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9, color: C.dim }}>0%</span>
-        <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9, color: C.dim }}>FIRE 100%</span>
+        <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.dim }}>0%</span>
+        <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.dim }}>FIRE 100%</span>
       </div>
     </div>
   );
@@ -382,21 +382,21 @@ const Meter = ({ pct }) => {
 
 const HR = () => <div style={{ height: 1, background: C.bdr, margin: "12px 0" }} />;
 const SB = ({ label }) => (
-  <p style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9, color: C.gold, textTransform: "uppercase", letterSpacing: "0.14em", marginBottom: 8, paddingLeft: 6, display: "flex", alignItems: "center", gap: 5 }}>
+  <p style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.gold, textTransform: "uppercase", letterSpacing: "0.14em", marginBottom: 8, paddingLeft: 6, display: "flex", alignItems: "center", gap: 5 }}>
     <span style={{ opacity: .5 }}>◆</span> {label}
   </p>
 );
-const xT = { fontFamily: "'Geist Mono', monospace", fontSize: 9, fill: C.dim };
-const yT = { fontFamily: "'Geist Mono', monospace", fontSize: 9, fill: C.dim };
+const xT = { fontFamily: "'Geist', sans-serif", fontSize: 9, fill: C.dim };
+const yT = { fontFamily: "'Geist', sans-serif", fontSize: 9, fill: C.dim };
 const PhaseLegend = ({ workingYears }) => (
   <div style={{ display: "flex", gap: 14, marginBottom: 12, alignItems: "center" }}>
     <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
       <div style={{ width: 10, height: 3, background: C.violet, borderRadius: 2 }} />
-      <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9, color: C.violet }}>Accumulation (Yr 0–{workingYears})</span>
+      <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.violet }}>Accumulation (Yr 0–{workingYears})</span>
     </div>
     <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
       <div style={{ width: 10, height: 3, background: C.teal, borderRadius: 2 }} />
-      <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9, color: C.teal }}>Coasting (Yr {workingYears}+)</span>
+      <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.teal }}>Coasting (Yr {workingYears}+)</span>
     </div>
   </div>
 );
@@ -451,29 +451,29 @@ export default function Fire() {
       {/* Status strip */}
       <div style={{ background: C.surf, borderBottom: `1px solid ${C.bdr}`, padding: "0 28px", height: 44, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9, color: C.mut, letterSpacing: "0.12em", textTransform: "uppercase" }}>FIRE Planner</span>
+          <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.mut, letterSpacing: "0.12em", textTransform: "uppercase" }}>FIRE Planner</span>
           <div style={{ width: 1, height: 14, background: C.bdr2 }} />
-          <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9, color: C.dim, letterSpacing: "0.08em" }}>UK Wealth Planning Engine · {yr}</span>
+          <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.dim, letterSpacing: "0.08em" }}>UK Wealth Planning Engine · {yr}</span>
         </div>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
           {earlyRetire && (
             <div style={{ display: "flex", alignItems: "center", gap: 6, background: `${C.violet}10`, border: `1px solid ${C.violet}44`, borderRadius: 3, padding: "4px 12px" }}>
               <div style={{ width: 5, height: 5, borderRadius: "50%", background: C.violet, animation: "fireBlink 2s infinite" }} />
-              <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 10, color: C.violet }}>COAST FIRE · Stop Yr {inp.workingYears}</span>
+              <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 10, color: C.violet }}>COAST FIRE · Stop Yr {inp.workingYears}</span>
             </div>
           )}
           {fireYr
             ? <div style={{ display: "flex", alignItems: "center", gap: 7, background: "#081910", border: `1px solid ${C.green}44`, borderRadius: 3, padding: "4px 12px" }}>
                 <div style={{ width: 5, height: 5, borderRadius: "50%", background: C.green, animation: "firePulse 2s infinite" }} />
-                <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 10, color: C.green }}>FIRE · Yr {fireYr.year} · {yr + fireYr.year}</span>
+                <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 10, color: C.green }}>FIRE · Yr {fireYr.year} · {yr + fireYr.year}</span>
               </div>
             : <div style={{ display: "flex", alignItems: "center", gap: 7, background: "#191000", border: `1px solid ${C.amber}44`, borderRadius: 3, padding: "4px 12px" }}>
                 <div style={{ width: 5, height: 5, borderRadius: "50%", background: C.amber }} />
-                <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 10, color: C.amber }}>EXTENDING HORIZON</span>
+                <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 10, color: C.amber }}>EXTENDING HORIZON</span>
               </div>
           }
           <div style={{ background: C.card, border: `1px solid ${C.bdr2}`, borderRadius: 3, padding: "4px 12px" }}>
-            <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 10, color: C.sub }}>NW · <span style={{ color: C.gold }}>{fGBP(dn.netWorth)}</span></span>
+            <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 10, color: C.sub }}>NW · <span style={{ color: C.gold }}>{fGBP(dn.netWorth)}</span></span>
           </div>
         </div>
       </div>
@@ -494,8 +494,8 @@ export default function Fire() {
               <YearStepper label="Coasting Years" value={inp.coastingYears} onChange={v => setInp(p => ({ ...p, coastingYears: Math.max(1, v) }))} color={C.teal}   hint="Coast after work" />
             </div>
             <div style={{ marginTop: 6, padding: "5px 10px", background: `${C.gold}08`, border: `1px solid ${C.gold}22`, borderRadius: 4, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9, color: C.mut }}>TOTAL HORIZON</span>
-              <span style={{ fontFamily: "'Instrument Serif', serif", fontSize: 16, color: C.gold }}>{totalYears} yrs <span style={{ fontSize: 11, color: C.sub, fontFamily: "'Geist Mono', monospace" }}>· {yr + totalYears}</span></span>
+              <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.mut }}>TOTAL HORIZON</span>
+              <span style={{ fontFamily: "Georgia, serif", fontSize: 16, color: C.gold }}>{totalYears} yrs <span style={{ fontSize: 11, color: C.sub, fontFamily: "'Geist', sans-serif" }}>· {yr + totalYears}</span></span>
             </div>
           </div>
           <HR />
@@ -517,11 +517,11 @@ export default function Fire() {
           <Field label="GIA (General Investment Account)" value={inp.etfAllocation} onChange={set("etfAllocation")} hint="ETFs / shares outside ISA wrapper" />
           <HR />
           <div style={{ background: C.bg, border: `1px solid ${C.bdr}`, borderRadius: 4, padding: "10px 12px" }}>
-            <p style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9, color: C.mut, marginBottom: 8, letterSpacing: "0.08em" }}>MODEL ASSUMPTIONS</p>
+            <p style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.mut, marginBottom: 8, letterSpacing: "0.08em" }}>MODEL ASSUMPTIONS</p>
             {[["Pension","7.0% p.a."],["Property","4.5% p.a."],["ISA","8.0% p.a."],["GIA","10.0% p.a."],["Inflation","2.5% p.a."],["SWR","4.0%"]].map(([k,v]) => (
               <div key={k} style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
-                <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9, color: C.dim }}>{k}</span>
-                <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: 9, color: C.sub }}>{v}</span>
+                <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.dim }}>{k}</span>
+                <span style={{ fontFamily: "'Geist', sans-serif", fontSize: 9, color: C.sub }}>{v}</span>
               </div>
             ))}
           </div>
@@ -573,8 +573,8 @@ export default function Fire() {
                     <Tooltip content={<Tip />} />
                     <Legend wrapperStyle={{ fontFamily: "'Geist', sans-serif", fontSize: 10, color: C.sub }} />
                     {earlyRetire && <ReferenceArea x1={0} x2={inp.workingYears} fill={C.violet} fillOpacity={0.04} />}
-                    <ReferenceLine x={inp.workingYears} stroke={C.violet} strokeDasharray="3 3" label={{ value: "Stop Work", fill: C.violet, fontSize: 9, fontFamily: "'Geist Mono', monospace", position: "insideTopRight" }} />
-                    {fireYr && <ReferenceLine x={fireYr.year} stroke={C.green} strokeDasharray="3 3" label={{ value: "FIRE", fill: C.green, fontSize: 9, fontFamily: "'Geist Mono', monospace" }} />}
+                    <ReferenceLine x={inp.workingYears} stroke={C.violet} strokeDasharray="3 3" label={{ value: "Stop Work", fill: C.violet, fontSize: 9, fontFamily: "'Geist', sans-serif", position: "insideTopRight" }} />
+                    {fireYr && <ReferenceLine x={fireYr.year} stroke={C.green} strokeDasharray="3 3" label={{ value: "FIRE", fill: C.green, fontSize: 9, fontFamily: "'Geist', sans-serif" }} />}
                     <Area type="monotone" dataKey="pension" name="Pension" stroke={C.blue}  fill="url(#gpen)"  strokeWidth={1.5} dot={false} />
                     <Area type="monotone" dataKey="equity"  name="Equity"  stroke={C.amber} fill="url(#gprop)" strokeWidth={1.5} dot={false} />
                     <Area type="monotone" dataKey="isa"     name="ISA"     stroke={C.green} fill="url(#gisa)"  strokeWidth={1.5} dot={false} />
@@ -591,8 +591,8 @@ export default function Fire() {
                 ].map(a => (
                   <div key={a.l} className="fire-kc" style={{ flex:"1 1 120px", background:C.card, border:`1px solid ${C.bdr}`, borderBottom:`2px solid ${a.col}`, borderRadius:4, padding:"14px 16px" }}>
                     <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9, color:C.mut, textTransform:"uppercase", letterSpacing:"0.12em", marginBottom:8 }}>{a.l}</p>
-                    <p style={{ fontFamily:"'Instrument Serif', serif", fontSize:22, color:a.col }}>{fGBP(a.v)}</p>
-                    <p style={{ fontFamily:"'Geist Mono', monospace", fontSize:9.5, color:C.dim, marginTop:4 }}>
+                    <p style={{ fontFamily:"Georgia, serif", fontSize:22, color:a.col }}>{fGBP(a.v)}</p>
+                    <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9.5, color:C.dim, marginTop:4 }}>
                       {fPct((a.v/(dn.netWorth||1))*100)} of portfolio
                       {a.s > 0 && <span style={{color:C.sub}}> · +{Math.max(0,Math.round((a.v/a.s-1)*100))}%</span>}
                     </p>
@@ -622,7 +622,7 @@ export default function Fire() {
                     <Tooltip content={<Tip />} />
                     <Legend wrapperStyle={{ fontFamily:"'Geist', sans-serif", fontSize:10, color:C.sub }} />
                     {earlyRetire && <ReferenceArea yAxisId="l" x1={0} x2={inp.workingYears} fill={C.violet} fillOpacity={0.04} />}
-                    <ReferenceLine yAxisId="l" x={inp.workingYears} stroke={C.violet} strokeDasharray="3 3" label={{ value:"Stop Work", fill:C.violet, fontSize:9, fontFamily:"'Geist Mono', monospace", position:"insideTopRight" }} />
+                    <ReferenceLine yAxisId="l" x={inp.workingYears} stroke={C.violet} strokeDasharray="3 3" label={{ value:"Stop Work", fill:C.violet, fontSize:9, fontFamily:"'Geist', sans-serif", position:"insideTopRight" }} />
                     {fireYr && <ReferenceLine yAxisId="l" x={fireYr.year} stroke={C.green} strokeDasharray="3 3" />}
                     <Area yAxisId="l" type="monotone" dataKey="netWorth"    name="Net Worth"   stroke={C.gold} fill="url(#gnw)" strokeWidth={2} dot={false} />
                     <Line yAxisId="l" type="monotone" dataKey="fireTarget"  name="FIRE Target" stroke={C.red}  strokeDasharray="4 4" strokeWidth={1.2} dot={false} />
@@ -635,24 +635,24 @@ export default function Fire() {
                 <table style={{ width:"100%", borderCollapse:"collapse" }}>
                   <thead><tr>
                     {["Yr","Cal Yr","Phase","Pension","Equity","ISA","GIA","Net Worth","FIRE %","Passive/yr"].map(h=>(
-                      <th key={h} style={{ padding:"6px 8px", textAlign:"right", fontFamily:"'Geist Mono', monospace", fontSize:9, color:C.mut, letterSpacing:"0.1em", borderBottom:`1px solid ${C.bdr}`, fontWeight:400 }}>{h}</th>
+                      <th key={h} style={{ padding:"6px 8px", textAlign:"right", fontFamily:"'Geist', sans-serif", fontSize:9, color:C.mut, letterSpacing:"0.1em", borderBottom:`1px solid ${C.bdr}`, fontWeight:400 }}>{h}</th>
                     ))}
                   </tr></thead>
                   <tbody>
                     {data.filter((_,i)=>i%Math.max(1,Math.floor(totalYears/12))===0||i===data.length-1||i===inp.workingYears).slice(0,14).map(d=>(
                       <tr key={d.year} style={{ borderBottom:`1px solid ${C.bdr}`, background:d.year===inp.workingYears?`${C.violet}08`:"transparent" }}>
-                        <td style={{ padding:"6px 8px", fontFamily:"'Geist Mono', monospace", fontSize:10, color:C.mut,   textAlign:"right" }}>{d.year}</td>
-                        <td style={{ padding:"6px 8px", fontFamily:"'Geist Mono', monospace", fontSize:10, color:C.dim,   textAlign:"right" }}>{yr+d.year}</td>
+                        <td style={{ padding:"6px 8px", fontFamily:"'Geist', sans-serif", fontSize:10, color:C.mut,   textAlign:"right" }}>{d.year}</td>
+                        <td style={{ padding:"6px 8px", fontFamily:"'Geist', sans-serif", fontSize:10, color:C.dim,   textAlign:"right" }}>{yr+d.year}</td>
                         <td style={{ padding:"6px 8px", textAlign:"right" }}>
-                          <span style={{ fontFamily:"'Geist Mono', monospace", fontSize:8.5, color:d.phase==="ACCUMULATION"?C.violet:C.teal, background:d.phase==="ACCUMULATION"?`${C.violet}18`:`${C.teal}18`, padding:"1px 5px", borderRadius:2 }}>{d.phase==="ACCUMULATION"?"ACC":"COAST"}</span>
+                          <span style={{ fontFamily:"'Geist', sans-serif", fontSize:8.5, color:d.phase==="ACCUMULATION"?C.violet:C.teal, background:d.phase==="ACCUMULATION"?`${C.violet}18`:`${C.teal}18`, padding:"1px 5px", borderRadius:2 }}>{d.phase==="ACCUMULATION"?"ACC":"COAST"}</span>
                         </td>
-                        <td style={{ padding:"6px 8px", fontFamily:"'Geist Mono', monospace", fontSize:10, color:C.blue,  textAlign:"right" }}>{fGBP(d.pension)}</td>
-                        <td style={{ padding:"6px 8px", fontFamily:"'Geist Mono', monospace", fontSize:10, color:C.amber, textAlign:"right" }}>{fGBP(d.equity)}</td>
-                        <td style={{ padding:"6px 8px", fontFamily:"'Geist Mono', monospace", fontSize:10, color:C.green, textAlign:"right" }}>{fGBP(d.isa)}</td>
-                        <td style={{ padding:"6px 8px", fontFamily:"'Geist Mono', monospace", fontSize:10, color:C.teal,  textAlign:"right" }}>{fGBP(d.etf)}</td>
-                        <td style={{ padding:"6px 8px", fontFamily:"'Geist Mono', monospace", fontSize:10, color:C.wht,   textAlign:"right", fontWeight:500 }}>{fGBP(d.netWorth)}</td>
-                        <td style={{ padding:"6px 8px", fontFamily:"'Geist Mono', monospace", fontSize:10, textAlign:"right", color:d.fireProgress>=100?C.green:d.fireProgress>=60?C.gold:C.red }}>{fPct(d.fireProgress)}</td>
-                        <td style={{ padding:"6px 8px", fontFamily:"'Geist Mono', monospace", fontSize:10, color:C.gold,  textAlign:"right" }}>{fGBP(d.passiveIncome)}</td>
+                        <td style={{ padding:"6px 8px", fontFamily:"'Geist', sans-serif", fontSize:10, color:C.blue,  textAlign:"right" }}>{fGBP(d.pension)}</td>
+                        <td style={{ padding:"6px 8px", fontFamily:"'Geist', sans-serif", fontSize:10, color:C.amber, textAlign:"right" }}>{fGBP(d.equity)}</td>
+                        <td style={{ padding:"6px 8px", fontFamily:"'Geist', sans-serif", fontSize:10, color:C.green, textAlign:"right" }}>{fGBP(d.isa)}</td>
+                        <td style={{ padding:"6px 8px", fontFamily:"'Geist', sans-serif", fontSize:10, color:C.teal,  textAlign:"right" }}>{fGBP(d.etf)}</td>
+                        <td style={{ padding:"6px 8px", fontFamily:"'Geist', sans-serif", fontSize:10, color:C.wht,   textAlign:"right", fontWeight:500 }}>{fGBP(d.netWorth)}</td>
+                        <td style={{ padding:"6px 8px", fontFamily:"'Geist', sans-serif", fontSize:10, textAlign:"right", color:d.fireProgress>=100?C.green:d.fireProgress>=60?C.gold:C.red }}>{fPct(d.fireProgress)}</td>
+                        <td style={{ padding:"6px 8px", fontFamily:"'Geist', sans-serif", fontSize:10, color:C.gold,  textAlign:"right" }}>{fGBP(d.passiveIncome)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -666,7 +666,7 @@ export default function Fire() {
             <div key={`ph${tick}`} style={A}>
               <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10, marginBottom:14 }}>
                 <div style={{ background:C.card, border:`1px solid ${C.violet}33`, borderTop:`2px solid ${C.violet}`, borderRadius:4, padding:"18px" }}>
-                  <p style={{ fontFamily:"'Geist Mono', monospace", fontSize:9, color:C.violet, textTransform:"uppercase", letterSpacing:"0.14em", marginBottom:12 }}>◆ Accumulation Phase — Yr 0 to {inp.workingYears}</p>
+                  <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9, color:C.violet, textTransform:"uppercase", letterSpacing:"0.14em", marginBottom:12 }}>◆ Accumulation Phase — Yr 0 to {inp.workingYears}</p>
                   <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:8 }}>
                     {[
                       { l:"Duration",       v:`${inp.workingYears} years`, col:C.violet },
@@ -678,13 +678,13 @@ export default function Fire() {
                     ].map(i=>(
                       <div key={i.l} style={{ background:C.surf, borderRadius:3, padding:"10px 12px" }}>
                         <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9, color:C.mut, marginBottom:4, textTransform:"uppercase", letterSpacing:"0.1em" }}>{i.l}</p>
-                        <p style={{ fontFamily:"'Instrument Serif', serif", fontSize:18, color:i.col }}>{i.v}</p>
+                        <p style={{ fontFamily:"Georgia, serif", fontSize:18, color:i.col }}>{i.v}</p>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div style={{ background:C.card, border:`1px solid ${C.teal}33`, borderTop:`2px solid ${C.teal}`, borderRadius:4, padding:"18px" }}>
-                  <p style={{ fontFamily:"'Geist Mono', monospace", fontSize:9, color:C.teal, textTransform:"uppercase", letterSpacing:"0.14em", marginBottom:12 }}>◆ Coasting Phase — Yr {inp.workingYears} to {totalYears}</p>
+                  <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9, color:C.teal, textTransform:"uppercase", letterSpacing:"0.14em", marginBottom:12 }}>◆ Coasting Phase — Yr {inp.workingYears} to {totalYears}</p>
                   <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:8 }}>
                     {[
                       { l:"Coast Duration", v:`${totalYears-inp.workingYears} years`, col:C.teal },
@@ -696,7 +696,7 @@ export default function Fire() {
                     ].map(i=>(
                       <div key={i.l} style={{ background:C.surf, borderRadius:3, padding:"10px 12px" }}>
                         <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9, color:C.mut, marginBottom:4, textTransform:"uppercase", letterSpacing:"0.1em" }}>{i.l}</p>
-                        <p style={{ fontFamily:"'Instrument Serif', serif", fontSize:18, color:i.col }}>{i.v}</p>
+                        <p style={{ fontFamily:"Georgia, serif", fontSize:18, color:i.col }}>{i.v}</p>
                       </div>
                     ))}
                   </div>
@@ -711,7 +711,7 @@ export default function Fire() {
                     <YAxis tickFormatter={v=>fGBP(v)} tick={yT} />
                     <Tooltip content={<Tip />} />
                     {earlyRetire && <ReferenceArea x1={0} x2={inp.workingYears} fill={C.violet} fillOpacity={0.05} />}
-                    <ReferenceLine x={inp.workingYears} stroke={C.violet} strokeDasharray="3 3" label={{ value:"Stop", fill:C.violet, fontSize:9, fontFamily:"'Geist Mono', monospace" }} />
+                    <ReferenceLine x={inp.workingYears} stroke={C.violet} strokeDasharray="3 3" label={{ value:"Stop", fill:C.violet, fontSize:9, fontFamily:"'Geist', sans-serif" }} />
                     <Bar dataKey="annualContrib" name="Annual Contributions" fill={C.violet} fillOpacity={0.7} radius={[2,2,0,0]} />
                   </ComposedChart>
                 </ResponsiveContainer>
@@ -719,7 +719,7 @@ export default function Fire() {
               <div style={{ background:C.card, border:`1px solid ${C.bdr}`, borderRadius:4, padding:"18px" }}>
                 <SH>Coast FIRE Strategy Commentary</SH>
                 <div style={{ background:C.bg, borderLeft:`2px solid ${C.violet}`, padding:"12px 16px", borderRadius:"0 4px 4px 0", marginBottom:12 }}>
-                  <p style={{ fontFamily:"'Geist Mono', monospace", fontSize:9, color:C.violet, marginBottom:6, letterSpacing:"0.08em" }}>COAST FIRE MECHANICS</p>
+                  <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9, color:C.violet, marginBottom:6, letterSpacing:"0.08em" }}>COAST FIRE MECHANICS</p>
                   <p style={{ fontFamily:"'Geist', sans-serif", fontSize:12, color:C.sub, lineHeight:1.65 }}>
                     Coast FIRE is achieved when your invested assets, compounding at the assumed growth rate with <em>zero further contributions</em>, will reach your FIRE number by your target date.
                     Your coasting pot of <strong style={{color:C.wht}}>{fGBP(dStop.netWorth)}</strong> at Year {inp.workingYears} compounds silently for {totalYears-inp.workingYears} years.
@@ -727,7 +727,7 @@ export default function Fire() {
                   </p>
                 </div>
                 <div style={{ background:C.bg, borderLeft:`2px solid ${C.gold}`, padding:"12px 16px", borderRadius:"0 4px 4px 0" }}>
-                  <p style={{ fontFamily:"'Geist Mono', monospace", fontSize:9, color:C.gold, marginBottom:6, letterSpacing:"0.08em" }}>PENSION ACCESS BRIDGE</p>
+                  <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9, color:C.gold, marginBottom:6, letterSpacing:"0.08em" }}>PENSION ACCESS BRIDGE</p>
                   <p style={{ fontFamily:"'Geist', sans-serif", fontSize:12, color:C.sub, lineHeight:1.65 }}>
                     UK minimum pension access age rises to <strong style={{color:C.wht}}>57 in 2028</strong>. If you stop work at Year {inp.workingYears} ({yr+inp.workingYears}) and are below 57, plan a bridge strategy using ISA drawdown, dividend income, or property equity.
                     Your ISA at Year {inp.workingYears}: <strong style={{color:C.wht}}>{fGBP(dStop.isa)}</strong> — fully accessible at any age, tax-free.
@@ -761,7 +761,7 @@ export default function Fire() {
                     <YAxis tickFormatter={v=>fGBP(v)} tick={yT} />
                     <Tooltip content={<Tip />} />
                     <Legend wrapperStyle={{ fontFamily:"'Geist', sans-serif", fontSize:10, color:C.sub }} />
-                    <ReferenceLine x={inp.workingYears} stroke={C.violet} strokeDasharray="3 3" label={{ value:"Stop Work", fill:C.violet, fontSize:9, fontFamily:"'Geist Mono', monospace", position:"insideTopRight" }} />
+                    <ReferenceLine x={inp.workingYears} stroke={C.violet} strokeDasharray="3 3" label={{ value:"Stop Work", fill:C.violet, fontSize:9, fontFamily:"'Geist', sans-serif", position:"insideTopRight" }} />
                     <Area type="monotone" dataKey="property" name="Property Value" stroke={C.gold}  fill="url(#gpv)" strokeWidth={1.5} dot={false} />
                     <Area type="monotone" dataKey="equity"   name="Net Equity"     stroke={C.green} fill="url(#geq)" strokeWidth={1.5} dot={false} />
                     <Line type="monotone" dataKey="mortgage" name="Mortgage Bal."  stroke={C.red}   strokeDasharray="3 3" strokeWidth={1.2} dot={false} />
@@ -779,12 +779,12 @@ export default function Fire() {
                   ].map(r=>(
                     <div key={r.l} style={{ background:C.surf, border:`1px solid ${C.bdr}`, borderRadius:4, padding:"12px 14px" }}>
                       <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9.5, color:C.mut, marginBottom:6 }}>{r.l}</p>
-                      <p style={{ fontFamily:"'Instrument Serif', serif", fontSize:20, color:r.col }}>{r.v}</p>
+                      <p style={{ fontFamily:"Georgia, serif", fontSize:20, color:r.col }}>{r.v}</p>
                     </div>
                   ))}
                 </div>
                 <div style={{ background:C.bg, borderLeft:`2px solid ${C.gold}`, padding:"10px 14px", borderRadius:"0 4px 4px 0" }}>
-                  <p style={{ fontFamily:"'Geist Mono', monospace", fontSize:9, color:C.gold, marginBottom:5, letterSpacing:"0.08em" }}>FUND MANAGER COMMENTARY</p>
+                  <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9, color:C.gold, marginBottom:5, letterSpacing:"0.08em" }}>FUND MANAGER COMMENTARY</p>
                   <p style={{ fontFamily:"'Geist', sans-serif", fontSize:11.5, color:C.sub, lineHeight:1.65 }}>
                     At {inp.mortgageRate}% your mortgage is a risk-free hurdle rate.
                     {inp.mortgageRate < 6 ? " ISA (8%) and GIA (10%) allocations projected to outperform — prioritise investment over overpayment unless LTV reduction unlocks a better rate tier." : " Overpayments may outperform on a risk-adjusted basis — consider a 50/50 hybrid strategy."}
@@ -818,9 +818,9 @@ export default function Fire() {
                     <div key={b.band} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"11px 16px", marginBottom:4, background:active?`${b.col}07`:C.surf, border:`1px solid ${active?b.col+"2a":C.bdr}`, borderRadius:3, opacity:active?1:.35 }}>
                       <div>
                         <p style={{ fontFamily:"'Geist', sans-serif", fontSize:12, color:active?b.col:C.dim }}>{b.band}</p>
-                        <p style={{ fontFamily:"'Geist Mono', monospace", fontSize:9.5, color:C.dim, marginTop:2 }}>{b.range} @ {b.rate}</p>
+                        <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9.5, color:C.dim, marginTop:2 }}>{b.range} @ {b.rate}</p>
                       </div>
-                      <p style={{ fontFamily:"'Instrument Serif', serif", fontSize:22, color:active?b.col:C.dim }}>{fGBP(b.amt)}</p>
+                      <p style={{ fontFamily:"Georgia, serif", fontSize:22, color:active?b.col:C.dim }}>{fGBP(b.amt)}</p>
                     </div>
                   );
                 })}
@@ -838,7 +838,7 @@ export default function Fire() {
                   ].map(i=>(
                     <div key={i.l} style={{ background:C.surf, border:`1px solid ${C.bdr}`, borderRadius:4, padding:"10px 12px" }}>
                       <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9, color:C.mut, marginBottom:5, textTransform:"uppercase", letterSpacing:"0.1em" }}>{i.l}</p>
-                      <p style={{ fontFamily:"'Instrument Serif', serif", fontSize:20, color:i.col }}>{i.v}</p>
+                      <p style={{ fontFamily:"Georgia, serif", fontSize:20, color:i.col }}>{i.v}</p>
                     </div>
                   ))}
                 </div>
@@ -853,21 +853,21 @@ export default function Fire() {
                 <div key={i} style={{ background:C.card, border:`1px solid ${C.bdr}`, borderLeft:`3px solid ${r.col}`, borderRadius:4, padding:"18px 20px", marginBottom:10, animation:`fireUp .35s ease ${i*.07}s both` }}>
                   <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", marginBottom:10 }}>
                     <div style={{ display:"flex", alignItems:"center", gap:10 }}>
-                      <span style={{ fontFamily:"'Geist Mono', monospace", fontSize:13, color:r.col }}>{r.icon}</span>
-                      <span style={{ fontFamily:"'Instrument Serif', serif", fontSize:17, color:C.wht }}>{r.title}</span>
+                      <span style={{ fontFamily:"'Geist', sans-serif", fontSize:13, color:r.col }}>{r.icon}</span>
+                      <span style={{ fontFamily:"Georgia, serif", fontSize:17, color:C.wht }}>{r.title}</span>
                     </div>
-                    <span style={{ fontFamily:"'Geist Mono', monospace", fontSize:8.5, color:r.col, letterSpacing:"0.12em", background:`${r.col}12`, border:`1px solid ${r.col}3a`, padding:"3px 8px", borderRadius:2 }}>{r.p}</span>
+                    <span style={{ fontFamily:"'Geist', sans-serif", fontSize:8.5, color:r.col, letterSpacing:"0.12em", background:`${r.col}12`, border:`1px solid ${r.col}3a`, padding:"3px 8px", borderRadius:2 }}>{r.p}</span>
                   </div>
                   <p style={{ fontFamily:"'Geist', sans-serif", fontSize:12, color:C.sub, lineHeight:1.65, marginBottom:12 }}>{r.body}</p>
                   <div style={{ display:"inline-flex", alignItems:"center", gap:8, background:`${r.col}0c`, border:`1px solid ${r.col}22`, borderRadius:3, padding:"5px 12px" }}>
-                    <span style={{ fontFamily:"'Geist Mono', monospace", fontSize:9, color:r.col, letterSpacing:"0.1em" }}>IMPACT</span>
+                    <span style={{ fontFamily:"'Geist', sans-serif", fontSize:9, color:r.col, letterSpacing:"0.1em" }}>IMPACT</span>
                     <div style={{ width:1, height:9, background:`${r.col}44` }} />
-                    <span style={{ fontFamily:"'Geist Mono', monospace", fontSize:10, color:r.col }}>{r.impact}</span>
+                    <span style={{ fontFamily:"'Geist', sans-serif", fontSize:10, color:r.col }}>{r.impact}</span>
                   </div>
                 </div>
               ))}
               <div style={{ marginTop:10, padding:"12px 16px", background:C.surf, border:`1px solid ${C.bdr}`, borderRadius:4 }}>
-                <p style={{ fontFamily:"'Geist Mono', monospace", fontSize:9, color:C.dim, lineHeight:1.7 }}>
+                <p style={{ fontFamily:"'Geist', sans-serif", fontSize:9, color:C.dim, lineHeight:1.7 }}>
                   REGULATORY NOTICE — This dashboard is for illustrative and planning purposes only and does not constitute regulated financial advice under the Financial Services and Markets Act 2000. All projections use assumed growth rates and are not guaranteed. Past performance is not indicative of future results. Consult an FCA-authorised Independent Financial Adviser before making investment or pension decisions.
                 </p>
               </div>
