@@ -138,7 +138,7 @@ function buildRecs(inp, data, mMtg) {
   const earlyRetire = wYrs < tYrs;
   if (fireYr) recs.push({ p:"INSIGHT", col:C.green, icon:"◈",
     title:`FIRE Achievable — Year ${fireYr.year}`,
-    body:`You reach financial independence at Year ${fireYr.year} (${new Date().getFullYear()+fireYr.year}) with ${fGBP(fireYr.netWorth)} net worth. 4% SWR yields ${fGBP(fireYr.passiveIncome)}/yr — ${fPct(fireYr.passiveIncome/(inp.salary||1)*100)} of current gross.`,
+    body:`You reach financial independence at Year ${fireYr.year} (${new Date().getFullYear()+fireYr.year}) with ${fGBP(fireYr.netWorth)} total net worth. Liquid assets (pension + ISA + GIA) at that point: ${fGBP(fireYr.pension + fireYr.isa + fireYr.etf)} — 4% SWR on this yields ${fGBP(fireYr.passiveIncome)}/yr, ${fPct(fireYr.passiveIncome/(inp.salary||1)*100)} of current gross. Property equity (${fGBP(fireYr.equity)}) is excluded from the drawdown base.`,
     impact:`${fGBP(fireYr.passiveIncome)}/yr passive income` });
   else recs.push({ p:"ACTION", col:C.amber, icon:"◈",
     title:"FIRE Target Not Met Within Horizon",
