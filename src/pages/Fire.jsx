@@ -91,7 +91,7 @@ function project(inp) {
   const annPen = monthlyPension * 12;
   const annISA = Math.min(isaMonthly * 12, 20000);
   const mMtg   = mtgPmt(mortgageRemaining, mortgageRate / 100, mortgageYears || 25);
-  const fireTarget = (salary || 40000) * .7 / .04;
+  const fireTarget = salary > 0 ? salary * .7 / .04 : 0;
   let pen = lumpSum, prop = propertyValue, mtg = mortgageRemaining,
       isa = isaBalance, etf = etfAllocation;
   const data = [];
@@ -109,7 +109,7 @@ function project(inp) {
       etf:          Math.round(etf),
       netWorth:     Math.round(nw),
       fireTarget:   Math.round(fireTarget),
-      fireProgress: Math.round(Math.min((pen + isa + etf) / fireTarget * 100, 100) * 10) / 10,
+      fireProgress: fireTarget > 0 ? Math.round(Math.min((pen + isa + etf) / fireTarget * 100, 100) * 10) / 10 : 0,
       passiveIncome:Math.round((pen + isa + etf) * .04),
       phase:        working ? "ACCUMULATION" : "COASTING",
       annualContrib: working ? (annPen + annISA + (y > 0 ? occasionalContrib : 0)) : 0,
@@ -533,7 +533,7 @@ export default function Fire() {
           <div key={`k${tick}`} style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 14, ...A }}>
             <KPI label="Net Worth Today"              value={fGBP(d0.netWorth)}      sub={`Target ${fGBP(fireTarget)}`} col={C.gold}   glow />
             <KPI label={`Net Worth Yr ${totalYears}`} value={fGBP(dn.netWorth)}      sub="End of horizon"              col={C.blue} />
-            <KPI label="FIRE Number"                  value={fGBP(fireTarget)}        sub="70% salary ÷ 4% SWR"         col={C.gold2} />
+            <KPI label="FIRE Number"                  value={fireTarget > 0 ? fGBP(fireTarget) : "—"}  sub={fireTarget > 0 ? "70% salary ÷ 4% SWR (liquid assets)" : "Enter salary to calculate"}  col={C.gold2} />
             <KPI label="Pot at Stop Work"             value={fGBP(dStop.netWorth)}    sub={`Pension ${fGBP(dStop.pension)} + Eq ${fGBP(dStop.equity)} + ISA ${fGBP(dStop.isa)} + GIA ${fGBP(dStop.etf)}`} col={C.violet} />
             <KPI label="Annual Passive"               value={fGBP(dn.passiveIncome)}  sub={`Yr ${totalYears} drawdown`}  col={C.green} />
             <KPI label="Property Equity"              value={fGBP(dn.equity)}         sub={`Yr ${totalYears} projected`} col={C.amber} />
